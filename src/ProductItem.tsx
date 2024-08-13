@@ -15,10 +15,9 @@ export default function ProductItem({ product, deleteProduct, updateProduct }: P
     return(<>
         {
             product.name
-
         }
         <input onChange={e => setEditName(e.target.value)} />
-        <button onClick={() => {
+        <button disabled={editName.length < 6} onClick={() => {
             updateProduct(product, editName);
         }}>Update product
         </button>

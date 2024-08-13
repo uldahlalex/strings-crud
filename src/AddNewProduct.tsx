@@ -14,7 +14,7 @@ export default function AddNewProduct({addNewProduct}: AddNewProductProps) {
                 value={inputValue}
                 onChange={e => setInputValue(e.target.value)}
             />
-            <button onClick={() => {
+            <button disabled={inputValue.length < 6} onClick={() => {
                 addNewProduct(inputValue);
                 setInputValue("");
             }}>
